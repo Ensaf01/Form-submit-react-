@@ -1,15 +1,23 @@
 import { useState } from "react"
 
-const useInputState= (defaultValue ='') =>{
-    const [value,setVlaue ] =useState(defaultValue);
+const useInputState = (defaultValue = '') => {
+    const [value, setVlaue] = useState(defaultValue);
 
-    const handleChagesIs=val =>{
-    setVlaue(val.target.value)
+    // const handleChagesIs = val => {
+    //     setVlaue(val.target.value)
+    // }
+
+    // return [value, handleChagesIs]
+    const onChange = val => {
+        setVlaue(val.target.value)
+    }
+
+    return {
+        value,
+        onChange
+    }
 }
 
-return [value,handleChagesIs]
-}
 
 
-
-export default useInputState ;
+export default useInputState;
