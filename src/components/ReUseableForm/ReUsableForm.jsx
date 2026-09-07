@@ -1,10 +1,8 @@
 
 
-const ReUsableForm = ({formTitle ,submitButtonText='Submit'}) => {
+const ReUsableForm = ({formTitle,handleSubmit ,submitButtonText='Submit'}) => {
 
-    const handleSubmit =e =>{
-        e.preventDefault();
-    }
+
     return (
         <div>
             <h2>{formTitle}</h2>

@@ -7,16 +7,45 @@ import ReUsableForm from './components/ReUseableForm/ReUsableForm'
 // import SimpleForm from './components/Simpleform/SimpleForm'
 
 function App() {
-  
+  const handleSignSubmit = e => {
+    e.preventDefault();
+    const data ={
+      name: e.target.names.value,
+      email :e.target.email.value,
+      pass : e.target.email.value
+    }
+
+    console.log("sign up data",data);
+  }
+
+  const handleUpdateProfile=e =>{
+    e.preventDefault();
+    // data is object and simple way te form er data collect korechi,akhne UseRef,stateFull,custom hook etc use kore data access korte pari
+    const data ={
+      name: e.target.names.value,
+      email :e.target.email.value,
+      pass : e.target.email.value
+    }
+
+    console.log("profile update data",data);
+  }
 
   return (
     <>
-     {/* <SimpleForm></SimpleForm> */}
-     {/* <StateFullForm></StateFullForm> */}
-     {/* <RefForm></RefForm> */}
-     {/* <HookForm></HookForm> */}
-     <ReUsableForm formTitle={'Sign Up'} ></ReUsableForm>
-     <ReUsableForm formTitle={'Profile Update'} submitButtonText={'Update'}></ReUsableForm>
+      {/* <SimpleForm></SimpleForm> */}
+      {/* <StateFullForm></StateFullForm> */}
+      {/* <RefForm></RefForm> */}
+      {/* <HookForm></HookForm> */}
+      <ReUsableForm 
+      formTitle={'Sign Up'}
+      handleSubmit={handleSignSubmit} 
+      ></ReUsableForm>
+
+      <ReUsableForm 
+      formTitle={'Profile Update'} 
+      submitButtonText={'Update'} 
+      handleSubmit={handleUpdateProfile} 
+      ></ReUsableForm>
     </>
   )
 }
