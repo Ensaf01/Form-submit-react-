@@ -1,11 +1,12 @@
 
 
-const ReUsableForm = ({formTitle,handleSubmit ,submitButtonText='Submit'}) => {
+const ReUsableForm = ({formTitle,handleSubmit ,submitButtonText='Submit',children}) => {
 
 
     return (
         <div>
-            <h2>{formTitle}</h2>
+            {children}
+            {/* <h2>{formTitle}</h2> */}
             <form onSubmit={handleSubmit}>
                 <input type="text" name="names" id="" />
                 <br />

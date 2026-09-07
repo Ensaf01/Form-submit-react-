@@ -39,13 +39,19 @@ function App() {
       <ReUsableForm 
       formTitle={'Sign Up'}
       handleSubmit={handleSignSubmit} 
-      ></ReUsableForm>
+      >
+        <h2>Sign Up</h2>
+        <p>please sign up here</p>
+      </ReUsableForm>
 
       <ReUsableForm 
       formTitle={'Profile Update'} 
       submitButtonText={'Update'} 
       handleSubmit={handleUpdateProfile} 
-      ></ReUsableForm>
+      >
+        <h2>Update profile</h2>
+        <p>please always keep your profile update</p>
+      </ReUsableForm>
     </>
   )
 }
